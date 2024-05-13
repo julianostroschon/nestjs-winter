@@ -1,11 +1,13 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { knex } from './infra/queryBuilder';
+import { knex } from './modules/queryBuilder';
+import { graphql } from './modules/graphql';
+import { RootResolver } from './modules/root';
 
 @Module({
-  imports: [knex],
+  imports: [knex, graphql],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, RootResolver],
 })
 export class AppModule {}

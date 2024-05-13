@@ -5,11 +5,12 @@ import { InjectKnex, Knex } from 'nestjs-knex';
 export class AppController {
   constructor(@InjectKnex() private readonly db: Knex) {}
   @Get()
-  async getHello(@Req() request: Request): Promise<{ message: string }> {
-    const user = await this.db<{ nome: string }>('usuarios')
-      .where('email', 'demo@demo.com')
-      .first('nome');
-    console.log({ request });
+  async getHello(@Req() { body }: Request): Promise<{ message: string }> {
+    const user = await this.db<{ nome: string }>('usuarios').where(
+      'email',
+      'demo@demo.com',
+    );
+
     return { message: `Hello World, ${user.nome}` };
   }
 }

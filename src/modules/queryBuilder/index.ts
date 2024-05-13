@@ -1,10 +1,9 @@
 import { KnexModule } from 'nestjs-knex';
-import { databaseConfig } from '../env';
+import { databaseConfig } from '../../infra/env';
 
 export const knex = KnexModule.forRoot({
   config: {
     client: databaseConfig.DB_DRIVER,
-    // version: '5.7',
     useNullAsDefault: true,
     connection: {
       database: databaseConfig.DB_NAME,
