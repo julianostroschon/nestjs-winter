@@ -13,6 +13,7 @@
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "knex": "ts-node -r dotenv/config ./node_modules/.bin/knex --knexfile ./src/infra/db/knexfile.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -35,8 +36,7 @@
     "knex": "^3.1.0",
     "nestjs-knex": "^2.0.0",
     "reflect-metadata": "^0.2.0",
-    "rxjs": "^7.8.1",
-    "zod": "^3.23.6"
+    "rxjs": "^7.8.1"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

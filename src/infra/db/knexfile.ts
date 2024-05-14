@@ -1,5 +1,5 @@
 import { KnexModule } from 'nestjs-knex';
-import { databaseConfig } from '../../infra/env';
+import { databaseConfig } from '../env';
 import { join } from 'path';
 
 const absolute = (dest: string): string => join(__dirname, '../../../', dest);

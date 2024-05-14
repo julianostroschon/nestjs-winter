@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { knex } from './modules/queryBuilder';
+import { knex } from './infra/db/knexfile';
 import { graphql } from './modules/graphql';
 import { RootResolver } from './modules/root';
 
