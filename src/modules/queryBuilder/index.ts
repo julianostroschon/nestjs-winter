@@ -14,7 +14,6 @@ export const knex = KnexModule.forRoot({
       password: databaseConfig.DB_PASSWORD,
       host: databaseConfig.DB_HOST,
       port: databaseConfig.DB_PORT,
-      ssl: databaseConfig.DB_SSL_CERTIFICATE,
     },
     migrations: {
       directory: absolute('knex/migrations'),

@@ -10,7 +10,7 @@ const envRaw = z.object({
   DB_USERNAME: z.string().default('root'),
   DB_NAME: z.string().default('graphql'),
   DB_DRIVER: z.string().default('pg'),
-  DB_PORT: z.coerce.number().int().gte(100).lte(64999),
+  DB_PORT: z.coerce.number().int().gte(100).lte(64999).default(5432),
   DB_HOST: z.string().default('localhost'),
 });
 
@@ -25,3 +25,4 @@ export const databaseConfig: DBConfig = Object.freeze({
   DB_HOST: env.DB_HOST,
   DB_NAME: env.DB_NAME,
 });
+console.log({ databaseConfig });
